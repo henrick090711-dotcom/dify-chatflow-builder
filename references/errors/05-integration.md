@@ -239,7 +239,7 @@
 
 - **现象**：昨天通的 Mock 接口今天返回 404。
 - **原因**：`run.mocky.io/v3/xxx` 公共免费链接被平台定期清理。
-- **解法**：浏览器直接打开该 URL 确认；换 `beeceptor.com`（填端点名 → Create Endpoint → Mocking Rules → Create New Rule：Method `POST`、Path `/`、Status `200`、粘 Response Body → Save Rule，地址形如 `https://xmov-hotel-pms.free.beeceptor.com`）。
+- **解法**：浏览器直接打开该 URL 确认；换 `beeceptor.com`（填端点名 → Create Endpoint → Mocking Rules → Create New Rule：Method `POST`、Path `/`、Status `200`、粘 Response Body → Save Rule，地址形如 `https://demo-hotel-pms.free.beeceptor.com`）。
 - **验证**：浏览器打开新地址返回预期 JSON；Dify 节点由红转绿。
 
 ### 102. 无法判断是接口方问题还是自己配错

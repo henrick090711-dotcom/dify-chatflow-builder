@@ -474,7 +474,7 @@ Webhook 免审核、免可用人员白名单，群消息首选此路；私聊必
 | 工具 | 用法 | 注意 |
 | :--- | :--- | :--- |
 | `designer.mocky.io` | 填 Status `200`、Content-Type `application/json`、Body 粘 JSON → Generate | 生成 `run.mocky.io/v3/xxx`，公共免费链接会被定期清理，随时变 404 |
-| `beeceptor.com` | 填端点名（如 `xmov-hotel-pms`）→ Create Endpoint →【Mocking Rules】→ Create New Rule（Method `POST`、Path `/`、Status `200`、Response Body 粘 JSON）→ Save Rule | 无需注册，稳定性优于 mocky；地址形如 `https://xmov-hotel-pms.free.beeceptor.com` |
+| `beeceptor.com` | 填端点名（如 `demo-hotel-pms`）→ Create Endpoint →【Mocking Rules】→ Create New Rule（Method `POST`、Path `/`、Status `200`、Response Body 粘 JSON）→ Save Rule | 无需注册，稳定性优于 mocky；地址形如 `https://demo-hotel-pms.free.beeceptor.com` |
 
 Mock 返回 404 一定是链接失效，不是 Dify 配置问题：先在浏览器直接打开该 URL 验证。
 

@@ -73,7 +73,7 @@ widget_link_start:{__link_title:{{value}} __link_url:{{value}}}:widget_link_end
 - 起始 `widget_link_start:{`，结束 `}:widget_link_end`；参数 `__link_title`（标题）、`__link_url`（网址），顺序不可颠倒。
 - 分隔符：两参数之间**有且仅有一个英文半角空格**。
 
-固定链接可写死，不必上代码节点：`widget_link_start:{__link_title:魔珐科技官方网站 __link_url:https://xmov.ai}:widget_link_end`。
+固定链接可写死，不必上代码节点：`widget_link_start:{__link_title:某科技公司官方网站 __link_url:https://example.com}:widget_link_end`。
 
 ### 地图
 
@@ -104,7 +104,7 @@ widget_map_start:{__start_text:上海桂林路,__end_text:上海外滩,__type:dr
 研发模板：`widget_form_start:{__title:...,__label:...,__value:...}:widget_form_end`，扁平 key-value 串接，前端按 `__label` / `__value` 成对循环渲染。
 
 ```text
-widget_form_start:{__title:魔珐科技访客实名登记核对单,__label:访客姓名,__value:张三,__label:手机号码,__value:13812345678,__label:身份证号,__value:310101199001011234}:widget_form_end
+widget_form_start:{__title:某科技公司访客实名登记核对单,__label:访客姓名,__value:张三,__label:手机号码,__value:13812345678,__label:身份证号,__value:310101199001011234}:widget_form_end
 ```
 
 - 起始 `widget_form_start:{`，结束 `}:widget_form_end`；`__title` 必须第一位，`__label` / `__value` 成对出现，缺失填 `未提供`。
@@ -121,15 +121,15 @@ Markdown 下载链接（全端通用，零对接）：
 文档卡片信令（大屏专用，带扫码带走）：
 
 ```text
-好的，已为您调出《魔珐科技产品手册》，您可以在屏幕上预览，或微信扫码保存至手机。
+好的，已为您调出《某科技公司产品手册》，您可以在屏幕上预览，或微信扫码保存至手机。
 
 :::DOCUMENT_CARD
 {
-  "file_name": "魔珐全栈具身智能产品画册.pdf",
+  "file_name": "产品画册.pdf",
   "file_type": "pdf",
   "file_size": "8.5MB",
-  "file_url": "https://oss.xmov.ai/docs/brochure.pdf",
-  "qr_code_url": "https://api.qrserver.com/v1/create-qr-code/?data=https://oss.xmov.ai/docs/brochure.pdf"
+  "file_url": "https://oss.example.com/docs/brochure.pdf",
+  "qr_code_url": "https://api.qrserver.com/v1/create-qr-code/?data=https://oss.example.com/docs/brochure.pdf"
 }
 :::
 ```
@@ -294,7 +294,7 @@ interface IWidgetForm {
 
 ```python
 form_payload = {
-    "title": "魔珐科技访客实名登记核对单",
+    "title": "某科技公司访客实名登记核对单",
     "fields": [
         {"label": "访客姓名", "key": "visitor_name", "value": name},
         {"label": "手机号码", "key": "mobile_phone", "value": masked_phone},
@@ -406,7 +406,7 @@ widget_pic_start:{__image_url:{{代码执行 / image_url}}}:widget_pic_end
 
 ### SSML 跳转事件
 
-魔珐 SDK 把 SSML 里的 `<ue4event>` 当作时间轴同步事件抛给前端。
+数字人 SDK 把 SSML 里的 `<ue4event>` 当作时间轴同步事件抛给前端。
 
 ```xml
 <speak>

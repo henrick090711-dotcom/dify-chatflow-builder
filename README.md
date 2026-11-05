@@ -78,3 +78,9 @@ dify-chatflow-builder/
 - 统一使用标准命名 `SKILL.md`。若目标平台要求小写 `skill.md`，复制一份改名即可（GitHub 不允许同目录下两个仅大小写不同的文件）
 - frontmatter 只保留 `name` 和 `description`，不使用任何平台专属字段
 - 所有内容为纯 Markdown，无脚本依赖，任何工具都能读取
+
+## 许可
+
+MIT License。可自由使用、修改、分发、商用，保留版权声明即可。
+
+仓库内所有案例数据（姓名、工号、内网地址、Mock 端点）均已脱敏，可直接公开。

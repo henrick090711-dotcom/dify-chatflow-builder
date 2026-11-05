@@ -30,9 +30,9 @@
 
 ### 134. 本地上传正常、粘贴文件链接必报错
 
-- **现象**：文档提取器用 `local_file` 正常，改 `remote_url` 报错，请求体 `remote_url` 为 `http://192.168.10.161:9000/files/...`。
+- **现象**：文档提取器用 `local_file` 正常，改 `remote_url` 报错，请求体 `remote_url` 为 `http://192.168.x.x:9000/files/...`。
 - **原因**：本地上传走浏览器直传存储桶 + 容器卷/SDK 读取，不经外部网络；`remote_url` 要求 `worker`/`api` 容器主动 HTTP 下载，目标属 RFC 1918 私网段，被内置 `ssrf_proxy`（基于 Squid）按默认策略拒绝，直接掐断（403 或连接拒绝）。
-- **解法**：`.env` 中注释 `SSRF_PROXY_HTTP_URL` / `SSRF_PROXY_HTTPS_URL`，或加 `NO_PROXY=192.168.10.161,127.0.0.1,localhost`，然后 `docker compose down && docker compose up -d`。演示场景优先改用文件上传，彻底绕开。
+- **解法**：`.env` 中注释 `SSRF_PROXY_HTTP_URL` / `SSRF_PROXY_HTTPS_URL`，或加 `NO_PROXY=192.168.x.x,127.0.0.1,localhost`，然后 `docker compose down && docker compose up -d`。演示场景优先改用文件上传，彻底绕开。
 
 ### 135. squid 白名单放行后仍报 403
 

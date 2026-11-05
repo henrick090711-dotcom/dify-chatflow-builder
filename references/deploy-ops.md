@@ -85,7 +85,7 @@ sudo firewall-cmd --reload
 {
   "type": "document",
   "transfer_method": "remote_url",
-  "remote_url": "http://192.168.10.161:9000/files/1b998650-.../file-preview?timestamp=...&sign=..."
+  "remote_url": "http://192.168.x.x:9000/files/1b998650-.../file-preview?timestamp=...&sign=..."
 }
 ```
 
@@ -105,7 +105,7 @@ SSRF_PROXY_HTTPS_URL=http://ssrf_proxy:3128
 # SSRF_PROXY_HTTPS_URL=
 
 # 或保留代理但放行指定内网地址
-NO_PROXY=192.168.10.161,127.0.0.1,localhost
+NO_PROXY=192.168.x.x,127.0.0.1,localhost
 ```
 
 生效：
@@ -120,7 +120,7 @@ docker compose up -d
 编辑 `docker/volumes/ssrf_proxy/squid.conf`，找到 `http_access deny to_localnet`，在其正上方插入放行：
 
 ```conf
-acl my_internal_server dst 192.168.10.161
+acl my_internal_server dst 192.168.x.x
 http_access allow my_internal_server
 
 http_access deny to_localnet
@@ -137,7 +137,7 @@ docker compose restart ssrf_proxy
 ### 3.3 改完仍失败：验证容器到宿主机端口连通性
 
 ```bash
-docker compose exec worker curl -I "http://192.168.10.161:9000/files/1b998650-e3d1-4923-9249-68b1fd8a1635/file-preview?..."
+docker compose exec worker curl -I "http://192.168.x.x:9000/files/1b998650-e3d1-4923-9249-68b1fd8a1635/file-preview?..."
 ```
 
 | 返回 | 结论 | 处理 |

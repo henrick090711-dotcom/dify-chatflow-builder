@@ -28,9 +28,9 @@
 
 ### 108. 链接组件整段不显示，或标题和网址串在一起
 
-- **现象**：`widget_link_start:{__link_title:魔珐科技官方网站,__link_url:https://xmov.ai}:widget_link_end` 前端解析失败。
+- **现象**：`widget_link_start:{__link_title:某科技公司官方网站,__link_url:https://example.com}:widget_link_end` 前端解析失败。
 - **原因**：链接组件的分隔符是**一个英文半角空格**，被写成了逗号。
-- **解法**：改回 `widget_link_start:{__link_title:魔珐科技官方网站 __link_url:https://xmov.ai}:widget_link_end`。逗号只用于地图和表单。
+- **解法**：改回 `widget_link_start:{__link_title:某科技公司官方网站 __link_url:https://example.com}:widget_link_end`。逗号只用于地图和表单。
 
 ### 109. 地图卡片不弹，或起终点全空
 
